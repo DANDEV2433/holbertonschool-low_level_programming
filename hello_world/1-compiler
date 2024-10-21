@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -o $CFILE=".0"
+gcc -o $CFILE="main.0"
