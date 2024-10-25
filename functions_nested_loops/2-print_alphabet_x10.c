@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * print_alphabet - Prints the alphabet in lowercase 10 times
+ * _putchar - writes the character c to stdout
+ * @ch: The character to print 10 times
  *
- * Description: This function prints the letters from 'a' to 'z'
- * followed by a newline.
+ * Return: ch
  */
 void print_alphabet_x10(void)
 {
