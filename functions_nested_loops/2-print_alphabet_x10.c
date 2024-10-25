@@ -1,9 +1,8 @@
 #include "main.h"
 /**
- * _putchar - writes the character c to stdout
- * @ch: The character to print 10 times
+ * main - check the code.
  *
- * Return: ch
+ * Return: Always 0.
  */
 void print_alphabet_x10(void)
 {
