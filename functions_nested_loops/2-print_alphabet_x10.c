@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- * void print_alphabet_x10(void); - check the code.
- * @ch: The character to print
+ * print_alphabet_x10 - check the code.
  * Return: void
  */
 
