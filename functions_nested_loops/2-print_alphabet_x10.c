@@ -2,7 +2,7 @@
 /**
  * void print_alphabet_x10(void); - check the code.
  * @ch: The character to print
- * Return: Always 0.
+ * Return: void
  */
 
 void print_alphabet_x10(void)
