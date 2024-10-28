@@ -8,8 +8,8 @@
  */
 void print_numbers(void)
 {
-char ch = 0;
-	while (ch <= 9)
+char ch = '0';
+	while (ch <= '9')
 	{
 		write(1, &ch, 1);
 		ch++;
