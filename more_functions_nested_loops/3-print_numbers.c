@@ -14,4 +14,5 @@ for (ch = 0; 0 <= 9; ch++)
 {
 putchar(ch);
 }
+putchar('\n');
 }
