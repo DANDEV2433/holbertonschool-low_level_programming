@@ -1,6 +1,5 @@
 #include "main.h"
 #include <unistd.h>
-#include <stdio.h>
 /**
  * print_numbers - Write a function that prints the numbers
  * description: prints the numbers,from 0 to 9,followed by a new line
