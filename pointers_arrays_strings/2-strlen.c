@@ -4,14 +4,15 @@
 /**
 * _strlen - check the code
 * @s: Write a function that returns the length of a string
-* Return: void
+* Return: i
 */
 int _strlen(char *s)
 {
-int len;
+	int i;
 
-while (s[len] != '\0')
-len++;
-
-return (len);
+	while (s[i] != '\0')
+	{
+	i++;
+	}
+	return (i);
 }
