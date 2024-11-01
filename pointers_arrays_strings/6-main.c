@@ -9,7 +9,7 @@ int main(void)
 {
     char *str;
 
-    str = "Holberton";
+    str = "Holberton!";
     puts2(str);
     return (0);
 }
