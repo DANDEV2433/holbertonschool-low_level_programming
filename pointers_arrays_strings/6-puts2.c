@@ -7,7 +7,6 @@
 void puts2(char *str)
 {
 int i = 0;
-str = "Holberton!";
 
 	while (str[i] != '\0')
 	{
@@ -16,5 +15,5 @@ str = "Holberton!";
 	{
 	_putchar(str[i]);
 	}
-	_putchar('\n');
+	i++;
 }
