@@ -7,11 +7,20 @@
 */
 int _atoi(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (s[i] != '\0')
+	if (*s =='-')
 	{
-	if (s <= 98)
+	s++;
+	}
+	else if (*s =='+')
 	{
-	return (s);
+	s++;
+	}
+	while (*s >= '0' && *s <= '9')
+	{
+	s++;
+	}
+	for (i = 0; i <= -1 ; i++)
+	return (i);
 }
