@@ -4,8 +4,8 @@
 /**
 * *cap_string - check the code
 * @str: the string to convert
-* description: function that capitalizes all words of a string
-* Return: pointer to the converted string
+* description: capitalizes all words of a string
+* Return: str
 */
 char *cap_string(char *str)
 {
@@ -18,7 +18,10 @@ char *cap_string(char *str)
 	{
 	str[i] -= 32;
 	}
-	capitalize_next = " \t\n,;.!?\"(){}";
+	capitalize_next = (str[i] == ' ' || str[i] == ',' ||
+	str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
+	str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+	str[i] == '}');
 	i++;
 	}
 	return (str);
