@@ -18,8 +18,10 @@ unsigned int _strspn(char *s, char *accept)
 	{
 	if (s[i] == accept[lt])
 	{
-	result++;
+	return (result);
 	}
+	result++;
+	break;
 	}
 	if (s[i] != accept[lt])
 	return (0);
