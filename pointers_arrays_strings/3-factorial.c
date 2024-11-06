@@ -4,7 +4,7 @@
 * factorial - check the code
 * @n: number
 * description: Write a function that returns the factorial of a given number
-* Return: 1
+* Return: 0
 */
 int factorial(int n)
 {
