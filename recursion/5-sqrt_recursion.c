@@ -2,19 +2,32 @@
 /**
 * _sqrt_recursion - check the code
 * @n: number
-* description: function that returns the natural square root of a number
-* Return: 0
+* description: returns the natural square root of a number
+* Return: x or -1
 */
 int _sqrt_recursion(int n)
 {
-	int sqr = 0;
-
 	if (n < 0)
 	return (-1);
-	else if (n == 1)
-	return (1);
-	else if (sqr * sqr == n)
-	sqr++;
-	return (sqr);
-	return (sqr * _sqrt_recursion(n - 1));
+	return (square(0, n));
+}
+/**
+* square - check the code
+* @n: number
+* @x: square
+* description: check the natural square root of a number
+* Return: x or -1
+*/
+
+int square(int x, int n)
+{
+	if (x * x > n)
+	{
+	return (-1);
+	}
+	if (x * x == n)
+	{
+	return (x);
+	}
+	return (square(x + 1, n));
 }
