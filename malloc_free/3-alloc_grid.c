@@ -9,25 +9,32 @@
  * @height: height array
  * Return: grid
  */
-int **alloc_grid(int width, int height);
+int **alloc_grid(int width, int height)
 {
 	int **grid;
-	int i;
-	int j;
+	int a;
 
 	if (width <= 0)
-	return (0);
+	{
+	return (NULL);
+	}
 	if (height <= 0)
-	return (0);
-
-
-
-	for( a = 0; a < 0; a++)
-	for( b = 0; b < 0; b++°
-	grid = malloc((	width[a] + height[b] + 1) * sizeof(int));
+	{
+	return (NULL);
+	}
+	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
 	{
 	return (NULL);
 	}
+	for (a = 0; a < height; a++)
+	{
+	grid[a] = malloc(width * sizeof(int));
+	if (grid[a] == NULL)
+	{
+	free(grid);
+	}
 	return (grid);
+	}
+	return (0);
 }
