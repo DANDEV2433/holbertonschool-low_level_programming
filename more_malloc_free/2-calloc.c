@@ -11,46 +11,20 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *ptr;
-	unsigned int 
+	char *ptr;
+	unsigned int total_size, i;
 
-	if (nmemb == 0)
-	return (NULL);
-	if (size == 0)
+	if (nmemb == 0 || size == 0)
 	return (NULL);
 
-	ptr[] = calloc (nmemb,sizeof(int))
-	if (ptr == NULL)
-	return (NULL);
-	for (i = 0; i < nmemb; i++)
-	{
-	ptr[i] = calloc(size,sizeof(int));
+	total_size = nmemb * size;
 
-
-	while ((nmemb[]) != '\0')
-	{
-	lgr1++;
-	}
-
-	while ((s2[lgr2]) != '\0')
-	{
-	lgr2++;
-	}
-
-	if (n > lgr2)
-	n = lgr2;
-
-	int *ptr[] = calloc ( ,sizeof(int));
+	ptr = malloc(total_size);
 	if (ptr == NULL)
 	return (NULL);
 
-	for (i = 0; i < lgr1; i++)
-	dest[i] = s1[i];
+	for (i = 0; i < total_size; i++)
+	ptr[i] = 0;
 
-	for (j = 0; j < n; j++, i++)
-	dest[i] = s2[j];
-
-	dest[i] = '\0';
-
-	return (dest);
+	return (ptr);
 }
