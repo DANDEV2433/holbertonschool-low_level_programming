@@ -3,7 +3,6 @@
 #include <string.h>
 /**
  * dog_t *new_dog - check
- * @d: pointer
  * @name: char
  * @age: float
  * @owner: char
