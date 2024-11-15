@@ -3,15 +3,17 @@
 /**
  * struct dog - dog
  * @name: name of the dog
- * @age: int
+ * @age: float
  * @owner: char
  * Description: Define a new type struct dog
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-} dog;
+}dog_t;
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
 
 #endif
