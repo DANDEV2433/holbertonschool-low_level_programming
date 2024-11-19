@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdio.h>
+#include <stddef.h>
 /**
  * get_op_func - correct function
  * @s: pointer to dog
@@ -12,13 +12,6 @@ int (*get_op_func(char *s))(int, int);
 {
 	int i;
 
-	if (s != "+, -, *, /, %")
-	{
-	return (NULL);
-	}
-	if (i = 0; i < s; i++)
-
-
 	op_t ops[] = {
         {"+", op_add},
         {"-", op_sub},
@@ -26,5 +19,14 @@ int (*get_op_func(char *s))(int, int);
         {"/", op_div},
         {"%", op_mod},
         {NULL, NULL}
-    }op_t;
+    };
+}
+{
+	for (i = 0; ops[i].op != NULL; i++)
+	{
+	if (*(ops[i].op) == *s)
+	{
+	return ops[i].f;
+	}
+	return (NULL);
 }
