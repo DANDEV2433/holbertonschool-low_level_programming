@@ -2,7 +2,7 @@
 #include <stddef.h>
 /**
  * get_op_func - correct function
- * @s: pointer to dog
+ * @s: char
  * @int: integer
  * @int: integer
  * description: function selects the correct function to perform the operation
@@ -19,14 +19,13 @@ int (*get_op_func(char *s))(int, int);
         {"/", op_div},
         {"%", op_mod},
         {NULL, NULL}
-    };
-}
+    	};
 {
-	for (i = 0; ops[i].op != NULL; i++)
+	while (ops[i].op != NULL)
 	{
 	if (*(ops[i].op) == *s)
-	{
 	return ops[i].f;
+	i++;
 	}
 	return (NULL);
 }
