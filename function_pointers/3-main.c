@@ -3,8 +3,9 @@
 #include <stdlib.h>
 /**
  * main - check the code
- *
- * Return: Always 0.
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
@@ -18,14 +19,14 @@ int main(int argc, char *argv[])
         }
         num1 = atoi(argv[1]);
         num2 = atoi(argv[3]);
-
+	/* get_op function which takes an operator, op_func pointer to a function which performs the desired operation */
         op_func = get_op_func(argv[2]);
 	if (!op_func)
 	{
         printf("Error\n");
         return 99;
         }
-        if ((argv[2] == '/' || argv[2] == '%') && num2 == 0)
+        if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
         {
         printf("Error\n");
        	return 100;
