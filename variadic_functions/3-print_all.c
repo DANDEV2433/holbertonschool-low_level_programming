@@ -81,5 +81,5 @@ char *sep = ",";
 	}
 	va_end(arg);
 	printf("\n");
+	}
 }
-
