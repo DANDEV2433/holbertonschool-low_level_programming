@@ -69,13 +69,6 @@ char *sep = "";
 
 	va_start(arg, format);
 
-	if (format == NULL)
-	{
-		va_end(arg);
-		printf("\n");
-		return;
-	}
-
 	while (format[i] != '\0')
 	{
 	j = 0;
