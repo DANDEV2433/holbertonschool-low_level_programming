@@ -64,8 +64,8 @@ void print_all(const char * const format, ...)
 		{'\0', NULL}
 };
 va_list arg;
-int i = 0;
-char *sep = ",";
+int i = 0, j;
+char *sep = "";
 {
 	va_start(arg, format);
 
@@ -73,11 +73,19 @@ char *sep = ",";
 	{
 	while (format[i] != '\0')
 	{
+	j = 0;
+	while (print_element[j].element != '\0')
+	{
+	if (format[i] == print_element[j].element)
+	{
+	print_element[j].f(arg, sep);
+	sep = ", ";
+	break;
+	}
+	j++;
+	}
 	i++;
 	}
-	if (print_element[i].element == format[i])
-	{
-	print_element[i].f(arg, sep);
 	}
 	va_end(arg);
 	printf("\n");
