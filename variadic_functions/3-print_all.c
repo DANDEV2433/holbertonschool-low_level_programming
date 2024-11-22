@@ -69,7 +69,7 @@ char *sep = "";
 
 	va_start(arg, format);
 
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 	j = 0;
 	while (print_element[j].type != '\0')
