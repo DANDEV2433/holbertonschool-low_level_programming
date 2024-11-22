@@ -69,7 +69,6 @@ char *sep = "";
 {
 	va_start(arg, format);
 
-	if (format != NULL)
 	{
 	while (format[i] != '\0')
 	{
