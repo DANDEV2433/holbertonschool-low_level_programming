@@ -67,9 +67,15 @@ va_list arg;
 int i = 0, j;
 char *sep = "";
 
-va_start(arg, format);
+	va_start(arg, format);
 
+	if (format == NULL)
 	{
+		va_end(arg);
+		printf("\n");
+		return;
+	}
+
 	while (format[i] != '\0')
 	{
 	j = 0;
@@ -85,7 +91,7 @@ va_start(arg, format);
 	}
 	i++;
 	}
-	}
+
 	va_end(arg);
 	printf("\n");
 }
