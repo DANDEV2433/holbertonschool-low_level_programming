@@ -66,8 +66,8 @@ void print_all(const char * const format, ...)
 va_list arg;
 int i = 0, j;
 char *sep = "";
-{
-	va_start(arg, format);
+
+va_start(arg, format);
 
 	{
 	while (format[i] != '\0')
@@ -88,5 +88,4 @@ char *sep = "";
 	}
 	va_end(arg);
 	printf("\n");
-	}
 }
