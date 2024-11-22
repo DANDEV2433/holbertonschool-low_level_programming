@@ -1,41 +1,85 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+
+/**
+ * print_char - print character
+ * @arg: argument
+ * @sep: character before string
+ */
+void print_char(va_list arg, char *sep)
+{
+	printf("%s%c", sep, va_arg(arg, int));
+}
+
+/**
+ * print_int - print integer
+ * @arg: argument
+ * @sep: character before string
+ */
+void print_int(va_list arg, char *sep)
+{
+	printf("%s%d", sep, va_arg(arg, int));
+}
+
+/**
+ * print_float - print float
+ * @arg: argument
+ * @sep: character before string
+ */
+void print_float(va_list arg, char *sep)
+{
+	printf("%s%f", sep, va_arg(arg, double));
+}
+
+/**
+ * print_string - print string
+ * @arg: argument
+ * @sep: character before string
+ */
+void print_string(va_list arg, char *sep)
+{
+char *string = va_arg(arg, char*);
+
+	if (string == NULL)
+	string = "nil";
+	{
+	printf("%s%s", sep, string);
+	}
+}
+
 /**
  * print_all - prints anything
- * @format: string of caracter
- * @char *: pointer to const char 
+ * @format: arguments list
  * description: function that prints anything
- * Return: 
  */
+
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	char *s;
-	int i= 0;
-	char separator=",";
-
-	va_start(ap, format);
+	print_t print_element[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
+};
+va_list arg;
+int i = 0;
+char *sep = ",";
+{
+	va_start(arg, format);
 
 	if (format != NULL)
 	{
-		while (format[i] != '\0')
-		{
-		i++;
-		}
-	
-	if (separator != NULL && format[i] - 1)
-		printf("%s", separator);
-	if (format[i] == 'c')
-		printf("%c", va_arg(ap, char));
-	else if (format[i] == 'i')
-		printf("%d", va_arg(ap, int));
-	else if (format[i] == 'f')
-		printf("%f", va_arg(ap, double));
-	else if (format[i] == 's')
-		printf("%c", va_arg(ap, char*));
+	while (format[i] != '\0')
+	{
+	i++;
 	}
-	va_end(ap);
+	if (print_element[i].element == format[i])
+	{
+	print_element[i].f(arg, sep);
+	}
+	va_end(arg);
 	printf("\n");
-	}
 }
+
