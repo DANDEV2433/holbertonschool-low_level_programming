@@ -72,9 +72,9 @@ char *sep = "";
 	while (format[i] != '\0')
 	{
 	j = 0;
-	while (print_element[j].element != '\0')
+	while (print_element[j].type != '\0')
 	{
-	if (format[i] == print_element[j].element)
+	if (format[i] == print_element[j].type)
 	{
 	print_element[j].f(arg, sep);
 	sep = ", ";

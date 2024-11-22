@@ -15,7 +15,7 @@ void print_all(const char * const format, ...);
  */
 typedef struct print_element
 {
-	char element;
+	char type;
 	void (*f)(va_list arg, char *sep);
 }print_t;
 
