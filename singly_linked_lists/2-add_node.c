@@ -3,6 +3,22 @@
 #include <string.h>
 
 /**
+* _strlen - check the code
+* @s: Write a function that returns the length of a string
+* Return: i
+*/
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+	i++;
+	}
+	return (i);
+}
+
+/**
 * *add_node - adds a new node at the beginning of a list_t
 * @str: string to be added to the new node
 * @head: double pointer to the head
