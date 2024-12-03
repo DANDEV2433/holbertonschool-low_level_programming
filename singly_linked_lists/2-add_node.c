@@ -4,14 +4,14 @@
 
 /**
 * _strlen - check the code
-* @s: Write a function that returns the length of a string
+* @str: Write a function that returns the length of a string
 * Return: i
 */
-int _strlen(char *s)
+int _strlen(const char *str)
 {
 	int i = 0;
 
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
 	i++;
 	}
@@ -26,6 +26,7 @@ int _strlen(char *s)
 */
 list_t *add_node(list_t **head, const char *str)
 {
+
 	list_t *new_node;
 
 	new_node = malloc(sizeof(list_t));
@@ -39,7 +40,7 @@ list_t *add_node(list_t **head, const char *str)
 	free(new_node);
 	return (NULL);
 	}
-	new_node->len = strlen(str);
+	new_node->len = _strlen(str);
 	new_node->next = *head;
 	*head = new_node;
 
