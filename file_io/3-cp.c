@@ -16,7 +16,7 @@ void print_error(int code, const char *message, const char *filename)
 {
 	dprintf(STDERR_FILENO, message, filename);
 	exit(code);
-	}
+}
 
 /**
  * main - copy file to another file
@@ -49,8 +49,8 @@ char buffer[BUFFER_SIZE];
 	if (n_read == -1)
 	{
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
-	n_close(file_from);
-	n_close(file_to);
+	close(file_from);
+	close(file_to);
 	return (98);
 	}
 	n_close = close(file_from);
