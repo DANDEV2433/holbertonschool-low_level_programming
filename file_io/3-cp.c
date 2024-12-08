@@ -13,11 +13,11 @@
  * @filename: The name of the file causing the error
  */
 void print_error(int code, const char *message, const char *filename)
-       	{
+{
 	dprintf(STDERR_FILENO, message, filename);
 	exit(code);
 	}
-	
+
 /**
  * main - copy file to another file
  * @argc: the number of arguments
@@ -27,20 +27,20 @@ void print_error(int code, const char *message, const char *filename)
 int main(int argc, char *argv[])
 {
 int file_from, file_to, n_read, n_write, n_close;
-char buffer_size;
+char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 	print_error(97, "Usage: cp file_from file_to\n", "");
 
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
-	printf(98, "Error: Can't read from file %s\n", argv[1]);
-	
+	print_error(98, "Error: Can't read from file %s\n", argv[1]);
+
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
-       	if (file_to == -1)
+	if (file_to == -1)
 	print_error(99, "Error: Can't write to %s\n", argv[2]);
 
-	while ((n_read = read(file_from, buffer, buffer_size)) > 0)
+	while ((n_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 	n_write = write(file_to, buffer, n_read);
 	if (n_write == -1 || n_write != n_read)
@@ -49,12 +49,12 @@ char buffer_size;
 	if (n_read == -1)
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
 
-	close_status = close(file_from);
-	if (close_status == -1)
-	print_error(100, "Error: Can't close fd %d\n", file_from);
-       
-	close_status = close(file_to);
-	if (close_status == -1)
-	print_error(100, "Error: Can't close fd %d\n", file_to);
+	n_close = close(file_from);
+	if (n_close  == -1)
+	print_error(100, "Error: Can't close fd %d\n", argv[1]);
+
+	n_close = close(file_to);
+	if (n_close  == -1)
+	print_error(100, "Error: Can't close fd %d\n", argv[2]);
 	return (0);
 }
