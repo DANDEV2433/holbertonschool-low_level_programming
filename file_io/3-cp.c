@@ -36,7 +36,7 @@ char buffer[BUFFER_SIZE];
 	if (file_from == -1)
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
 
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	print_error(99, "Error: Can't write to %s\n", argv[2]);
 
