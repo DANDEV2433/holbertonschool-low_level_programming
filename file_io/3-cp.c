@@ -47,7 +47,6 @@ char buffer[BUFFER_SIZE];
 	print_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
 	if (n_read == -1)
-	{
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
 
 	n_close = close(file_from);
