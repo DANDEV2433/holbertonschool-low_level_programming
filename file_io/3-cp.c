@@ -48,6 +48,9 @@ char buffer[BUFFER_SIZE];
 	}
 	if (n_read == -1)
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
+	close(file_from);
+	close(file_to);
+	return (98);
 
 	n_close = close(file_from);
 	if (n_close  == -1)
