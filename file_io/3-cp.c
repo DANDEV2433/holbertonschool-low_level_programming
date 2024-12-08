@@ -47,11 +47,12 @@ char buffer[BUFFER_SIZE];
 	print_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
 	if (n_read == -1)
+	{
 	print_error(98, "Error: Can't read from file %s\n", argv[1]);
 	close(file_from);
 	close(file_to);
 	return (98);
-
+	}
 	n_close = close(file_from);
 	if (n_close  == -1)
 	print_error(100, "Error: Can't close fd %d\n", argv[1]);
